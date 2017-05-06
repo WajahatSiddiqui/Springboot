@@ -1,0 +1,5 @@
+info:
+  component: Rest Producer
+
+server:
+  port: 8010
