@@ -1,0 +1,5 @@
+info:
+  component: Hystrix Rest Consumer
+
+server:
+  port: 8011
