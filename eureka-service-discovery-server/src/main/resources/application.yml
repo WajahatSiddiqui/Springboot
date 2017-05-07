@@ -1,0 +1,24 @@
+info:
+  component: Eureka Service Discovery Server
+
+server:
+  port: ${PORT:7777}
+
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+logging:
+  level:
+    com.netfix.eureka: off
+    com.netflix.discovery: off
