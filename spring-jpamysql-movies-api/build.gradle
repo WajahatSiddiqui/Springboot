@@ -21,6 +21,10 @@ repositories {
 	mavenCentral()
 }
 
+springboot {
+	executable = true
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')

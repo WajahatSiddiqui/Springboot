@@ -6,13 +6,26 @@ info:
 server:
   port: 9999
 
+management:
+  context-path: /manage
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+
 #debug: true
 
 spring:
   datasource:
-    url:  jdbc:mysql://107.108.52.79:3306/spring_boot_demo
+    url:  jdbc:mysql://localhost:3306/spring_wajahat_demo?autoReconnect=true&useSSL=false
     username: root
-    password: 786SaMSaW
+    password: Welcome123
   jpa:
     show-sql: true
   hibernate:
