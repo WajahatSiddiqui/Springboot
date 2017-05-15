@@ -1,15 +1,8 @@
 # Springboot
-Demonstrates sample Spring applications using Springboot framework in STS
-
-Developing Topics application which has the following entities
-	Topics
-	Courses
-	Contents
+Demonstrates sample Spring applications using Springboot framework
+The following examples are highlighted
+	1) Service Discovery using Eureka
+	2) Spring application operational endpoints using actutors
+	3) Spring JPA with MYSQL, build movies database and expose CRUD endpoints
+	4) Springboot Netflix Hystrix
 	
-	Illustrates the use of STS, Apache Derby and JPA with Springboot annotations
-
-# Spring core
-
-# Spring AOSP (Aspect oriented programming)
-
-# Spring ORM (Hibernate)
