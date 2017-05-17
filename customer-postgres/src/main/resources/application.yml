@@ -1,0 +1,35 @@
+info:
+  app:
+    name: spring-jpapostgres-customer-api
+    description: Implementing Customer api with Spring JPA, Hibernate and Postgres SQL
+
+server:
+  port: 9999
+
+management:
+  context-path: /manage
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+
+#debug: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    generate-ddl: true
+  hibernate:
+      ddl-auto: update
+      # Allows Hibernate to generate SQL optimized for a particular DBMS
+      dialect: org.hibernate.dialect.PostgreSQLDialect
