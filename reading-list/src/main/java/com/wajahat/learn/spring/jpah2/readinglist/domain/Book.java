@@ -22,8 +22,6 @@ public class Book {
     private String author;
     private String description;
 
-    public Book() {}
-
     public Long getId() {
         return id;
     }

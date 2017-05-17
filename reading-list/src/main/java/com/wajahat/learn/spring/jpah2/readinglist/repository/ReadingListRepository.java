@@ -10,6 +10,6 @@ import java.util.List;
  * Created by wajahat on 16/5/17.
  */
 @Repository
-public interface ReadlingListRepository extends JpaRepository<Book, Long> {
+public interface ReadingListRepository extends JpaRepository<Book, Long> {
     List<Book> findByReader(String reader);
 }
