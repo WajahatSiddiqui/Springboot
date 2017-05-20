@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    platform: h2
+
+security:
+  user:
+    name: admin
+    password: s3cr3t
+  oauth2:
+    client:
+      client-id: foo
+      client-secret: bar
+    authorization: isAuthenticated()
+logging:
+  level:
+    org.springframework.security: DEBUG
