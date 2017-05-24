@@ -1,0 +1,24 @@
+info:
+  component: zuul proxy gateway
+
+server:
+  port: 8192
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka/
+
+zuul:
+  prefix: /api
+  routes:
+    rest-producer:
+      prefix: /rest-producer/**
+      url: http://localhost:8010
+      serviceId: REST-PRODUCER
+    hystrix-rest-consumer:
+      prefix: /rest-consumer/**
+      url: http://localhost:8011
+      serviceId: HYSTRIX-REST-CONSUMER

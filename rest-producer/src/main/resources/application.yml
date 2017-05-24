@@ -3,3 +3,10 @@ info:
 
 server:
   port: 8010
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka/
