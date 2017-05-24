@@ -1,0 +1,31 @@
+info:
+  component: springboot actuator endpoints
+  contact:
+    email: admin@wajahat.com
+    phone: 1-700-762-9879
+
+spring:
+  datasource:
+    platform: h2
+
+management:
+  security:
+    enabled: false
+  context-path: /manage
+  health:
+    sensitive: true
+    db:
+      enabled: true
+    defaults:
+      enabled: true
+    diskspace:
+      enabled: true
+
+endpoints:
+  sensitive: false
+  health:
+    enabled: true
+  shutdown:
+    enabled: true
+  restart:
+    enabled: true
