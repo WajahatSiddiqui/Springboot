@@ -4,13 +4,16 @@ info:
     email: admin@wajahat.com
     phone: 1-700-762-9879
 
+server:
+  error:
+    whitelabel:
+      enabled: false
+
 spring:
   datasource:
     platform: h2
 
 management:
-  security:
-    enabled: false
   context-path: /manage
   health:
     sensitive: true
@@ -21,11 +24,18 @@ management:
     diskspace:
       enabled: true
 
+security:
+  user:
+    name: admin
+    password: s3cr3t
+    role: ADMIN
+
 endpoints:
-  sensitive: false
   health:
     enabled: true
   shutdown:
     enabled: true
   restart:
     enabled: true
+  beans:
+    sensitive: true
