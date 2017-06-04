@@ -1,0 +1,6 @@
+info:
+  component: springboot lombok demo
+
+spring:
+  datasource:
+    platform: h2
