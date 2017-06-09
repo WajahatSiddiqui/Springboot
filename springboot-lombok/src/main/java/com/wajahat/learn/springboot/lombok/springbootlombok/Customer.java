@@ -23,4 +23,5 @@ public class Customer {
     @NonNull
     private String name;
     private String address;
+    private int age;
 }

@@ -25,4 +25,8 @@ public class CustomerService {
     public List<Customer> getCustomers() {
         return customerRepository.findAll();
     }
+
+    public List<CustomerAge> findAllByAge(int age) {
+        return customerRepository.findAllByAge(age);
+    }
 }

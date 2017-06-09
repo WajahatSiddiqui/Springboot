@@ -1,12 +1,15 @@
 package com.wajahat.learn.springboot.lombok.springbootlombok;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * Created by wajahat on 31/5/17.
@@ -30,5 +33,14 @@ public class CustomerController {
     @RequestMapping(value = "/{customerId}/address", method = RequestMethod.GET)
     public String getAddress(@PathVariable("customerId") Long customerId) {
         return ((Customer) customerService.getCustomer(customerId)).getAddress();
+    }
+
+    @RequestMapping(value = "/{age}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<CustomerAge>> getCustomerByAge(@PathVariable("age") int age) {
+        List<CustomerAge> list = customerService.findAllByAge(age);
+        if (list == null || list.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        //return new ResponseEntity<List<String>>(list, HttpStatus.OK);
+        return ResponseEntity.ok(list);
     }
 }

@@ -7,19 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class SpringbootLombokApplication implements CommandLineRunner {
+public class SpringbootLombokApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootLombokApplication.class, args);
 	}
 
-	@Autowired
-	private CustomerRepository customerRepository;
-
-
-	@Override
-	public void run(String... args) throws Exception {
-		customerRepository.findAll()
-				.forEach(System.out::println);
+	@Bean
+	public CommandLineRunner runner(CustomerRepository customerRepository) {
+		return args -> customerRepository.findAll().forEach(System.out::println);
 	}
+
 }
