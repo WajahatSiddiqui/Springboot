@@ -1,0 +1,8 @@
+info:
+  app:
+    name: springboot-ehcache
+    description: implement eh cache for users
+
+spring:
+  datasource:
+    platform: h2
